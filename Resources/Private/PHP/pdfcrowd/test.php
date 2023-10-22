@@ -134,7 +134,7 @@ $client->setFailOnNon200(True);
 foreach($failures as $failure) {
     try {
         $client->$failure[0]($failure[1]);
-        echo "FAILED expected an exception: ${failure}\n";
+        echo "FAILED expected an exception: {$failure}\n";
         exit(1);
     } catch(PdfcrowdException $e) {
         if (!strstr($e->getMessage(), $failure[2])) {
